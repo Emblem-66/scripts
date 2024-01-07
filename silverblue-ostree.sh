@@ -89,6 +89,41 @@ flatpak run org.mozilla.firefox
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 find ~/.var/app/org.mozilla.firefox/.mozilla/firefox -type d -name "*default-release" -exec sh -c 'echo "#TabsToolbar {display: none;}" >> "{}/chrome/userChrome.css"' \;
 
+### Gaming tools
+
+flatpak install -y \
+    com.vysp3r.ProtonPlus \
+    com.github.Matoking.protontricks \
+    org.freedesktop.Platform.VulkanLayer.gamescope \
+    org.freedesktop.Platform.VulkanLayer.MangoHud \
+    com.github.cubitect.cubiomes-viewer
+flatpak override --user --env=MANGOHUD_CONFIG=no_display,position=middle-left,font_size=13,full,fps_limit=60
+
+
+### Game Launchers
+
+apps=(
+"hu.kramo.Cartridges"
+"com.usebottles.bottles"
+"com.valvesoftware.Steam"
+"com.heroicgameslauncher.hgl"
+"org.openmw.OpenMW"
+"org.prismlauncher.PrismLauncher"
+"eu.vcmi.VCMI"
+)
+
+for app in "${apps[@]}"; do
+  flatpak install -y "$app"
+  flatpak override --user --env=MANGOHUD=1 "$app"
+  flatpak override --user --filesystem=~/SSD1 "$app"
+done
+
+### Steam GNOME Theme
+
+flatpak run com.valvesoftware.Steam
+git clone https://github.com/tkashkin/Adwaita-for-Steam
+cd Adwaita-for-Steam && ./install.py && cd ~ && rm -r -f Adwaita-for-Steam
+
 ### Flatpak apps install
 
 flatpak_apps=(
@@ -134,35 +169,3 @@ org.onlyoffice.desktopeditors
 for app in "${flatpak_apps[@]}"; do
     flatpak install -y $app
 done
-
-### Tools
-
-flatpak install -y com.vysp3r.ProtonPlus com.github.Matoking.protontricks
-flatpak install -y org.freedesktop.Platform.VulkanLayer.gamescope
-flatpak install -y org.freedesktop.Platform.VulkanLayer.MangoHud
-flatpak override --user --env=MANGOHUD_CONFIG=no_display,position=middle-left,font_size=13,full,fps_limit=60
-
-### Game Launchers
-
-apps=(
-"hu.kramo.Cartridges"
-"com.usebottles.bottles"
-"com.valvesoftware.Steam"
-"com.heroicgameslauncher.hgl"
-"org.openmw.OpenMW"
-"org.prismlauncher.PrismLauncher"
-"eu.vcmi.VCMI"
-"com.github.cubitect.cubiomes-viewer"
-)
-
-for app in "${apps[@]}"; do
-  flatpak install -y "$app"
-  flatpak override --user --env=MANGOHUD=1 "$app"
-  flatpak override --user --filesystem=~/SSD1 "$app"
-done
-
-### Steam GNOME Theme
-
-flatpak run com.valvesoftware.Steam
-git clone https://github.com/tkashkin/Adwaita-for-Steam
-cd Adwaita-for-Steam && ./install.py && cd ~ && rm -r -f Adwaita-for-Steam
