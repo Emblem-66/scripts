@@ -134,7 +134,7 @@ com.github.geigi.cozy
 com.github.neithern.g4music
 com.github.tchx84.Flatseal
 com.github.unrud.VideoDownloader
-com.heroicgameslauncher.hgl
+com.mattjakeman.ExtensionManager
 com.neatdecisions.Detwinner
 com.transmissionbt.Transmission
 eu.ithz.umftpd
