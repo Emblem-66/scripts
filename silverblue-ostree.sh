@@ -1,9 +1,16 @@
 #!/bin/bash
 
-###  rpm-ostree rebase ostree-unverified-registry:ghcr.io/emblem-66/fedora-silverblue:latest
-###  PERSONAL SCRIPT, DON'T USE IT ON YOUR PC UNLESS YOU ARE ME
-###  YOU ARE NOT YOU, YOU ARE ME. NO SHIT
-###  Seriously, it could break your system
+#-----------------------------------------------------------------------------------------------#
+#																								#
+#	rpm-ostree cancel																			#
+#	rpm-ostree rebase ostree-unverified-registry:ghcr.io/emblem-66/fedora-silverblue:latest		#
+#																								#
+#-----------------------------------------------------------------------------------------------#
+#																								#
+#					PERSONAL SCRIPT, DON'T USE IT ON YOUR PC UNLESS YOU ARE ME					#
+#								YOU ARE NOT YOU, YOU ARE ME. NO SHIT							#
+#																								#
+#-----------------------------------------------------------------------------------------------#
 
 ### Flatpak Setup
 
@@ -92,11 +99,11 @@ find ~/.var/app/org.mozilla.firefox/.mozilla/firefox -type d -name "*default-rel
 ### Gaming tools
 
 flatpak install -y \
-    com.vysp3r.ProtonPlus \
-    com.github.Matoking.protontricks \
-    org.freedesktop.Platform.VulkanLayer.gamescope \
-    org.freedesktop.Platform.VulkanLayer.MangoHud \
-    com.github.cubitect.cubiomes-viewer
+	com.vysp3r.ProtonPlus \
+	com.github.Matoking.protontricks \
+	org.freedesktop.Platform.VulkanLayer.gamescope \
+	org.freedesktop.Platform.VulkanLayer.MangoHud \
+	com.github.cubitect.cubiomes-viewer
 flatpak override --user --env=MANGOHUD_CONFIG=no_display,position=middle-left,font_size=13,full,fps_limit=60
 
 
@@ -113,9 +120,9 @@ apps=(
 )
 
 for app in "${apps[@]}"; do
-  flatpak install -y "$app"
-  flatpak override --user --env=MANGOHUD=1 "$app"
-  flatpak override --user --filesystem=~/SSD1 "$app"
+	flatpak install -y "$app"
+	flatpak override --user --env=MANGOHUD=1 "$app"
+	flatpak override --user --filesystem=~/SSD1 "$app"
 done
 
 ### Steam GNOME Theme
