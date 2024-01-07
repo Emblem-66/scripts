@@ -12,6 +12,8 @@
 #																								#
 #-----------------------------------------------------------------------------------------------#
 
+sudo ostree admin pin 0
+
 ### Flatpak Setup
 
 sudo flatpak override --reset
