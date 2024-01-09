@@ -64,6 +64,7 @@ EOF
 
 gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.desktop.wm.preferences action-middle-click-titlebar 'minimize'
+gsettings set org.gnome.shell enabled-extensions "['gsconnect@andyholmes.github.io', 'caffeine@patapon.info']"
 
 ### Nautilus
 
