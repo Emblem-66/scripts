@@ -75,12 +75,12 @@ gsettings set org.gnome.nautilus.list-view use-tree-view true
 gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified']"
 
 ### Apple Fonts
-
-git clone https://github.com/aisgbnok/Apple-Fonts.git ~/.local/share/fonts/Apple-Fonts
-gsettings set org.gnome.desktop.interface font-name 'SF Pro Display 9' # 'System-ui 9'
-gsettings set org.gnome.desktop.interface monospace-font-name 'SF Mono 9' # 'Liberation Mono 9'
-gsettings set org.gnome.desktop.interface document-font-name 'New York 9' # 'System-ui 9'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'SF Pro Display 9' # 'System-ui 9'
+# 
+# git clone https://github.com/aisgbnok/Apple-Fonts.git ~/.local/share/fonts/Apple-Fonts
+# gsettings set org.gnome.desktop.interface font-name 'SF Pro Display 9' # 'System-ui 9'
+# gsettings set org.gnome.desktop.interface monospace-font-name 'SF Mono 9' # 'Liberation Mono 9'
+# gsettings set org.gnome.desktop.interface document-font-name 'New York 9' # 'System-ui 9'
+# gsettings set org.gnome.desktop.wm.preferences titlebar-font 'SF Pro Display 9' # 'System-ui 9'
 
 ### Adw-gtk3 theme
 
