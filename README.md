@@ -1,6 +1,6 @@
-## my bash scripts
+# bash scripts
 
-# List of scripts:
+## List of scripts:
 
 ### silverblue-ostree.sh
 - personal one, changes to fstab
