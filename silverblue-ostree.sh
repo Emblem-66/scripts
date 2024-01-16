@@ -125,7 +125,7 @@ apps=(
 for app in "${apps[@]}"; do
 	flatpak install -y "$app"
 	flatpak override --user --env=MANGOHUD=1 "$app"
-	flatpak override --user --filesystem=~/SSD1 "$app"
+	# flatpak override --user --filesystem=~/SSD1 "$app"
 done
 
 ### Steam GNOME Theme
@@ -176,6 +176,54 @@ org.nickvision.tubeconverter
 org.onlyoffice.desktopeditors
 )
 
-for app in "${flatpak_apps[@]}"; do
-    flatpak install -y $app
-done
+# for app in "${flatpak_apps[@]}"; do
+#    flatpak install -y $app
+# done
+
+echo "base apps"
+flatpak install \
+app.drey.Warp \
+com.bitwarden.desktop \
+com.github.geigi.cozy \
+com.github.neithern.g4music \
+com.github.tchx84.Flatseal \
+com.mattjakeman.ExtensionManager
+com.neatdecisions.Detwinner \
+io.github.cboxdoerfer.FSearch \
+org.gnome.Evince \
+org.gnome.FileRoller \
+org.gnome.Loupe \
+org.gnome.Calculator \
+io.github.celluloid_player.Celluloid \
+io.github.dvlv.boxbuddyrs \
+io.missioncenter.MissionCenter \
+org.gnome.Calendar \
+org.gnome.Chess \
+org.gnome.TextEditor \
+org.gnome.gThumb
+
+echo "office"
+flatpak install \
+org.libreoffice.LibreOffice \
+org.onlyoffice.desktopeditors \
+org.gnome.meld \
+org.gnome.SimpleScan
+
+echo "media tools"
+flatpak install \
+app.drey.EarTag
+fr.handbrake.ghb
+net.mediaarea.MediaInfo
+net.natesales.Aviator
+io.gitlab.adhami3310.Converter
+io.gitlab.theevilskeleton.Upscaler
+org.gnome.gitlab.YaLTeR.Identity
+
+echo "file sharing"
+flatpak install \
+com.github.unrud.VideoDownloader \
+com.transmissionbt.Transmission \
+eu.ithz.umftpd org.filezillaproject.Filezilla \
+io.github.giantpinkrobots.varia \
+org.nickvision.tubeconverter \
+org.jdownloader.JDownloader
