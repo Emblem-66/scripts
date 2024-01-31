@@ -60,6 +60,10 @@ file:///var/home/pc/SSD1 SSD1
 file:///var/home/pc/SSD2 SSD2
 EOF
 
+### .bashrc
+
+### scripts
+
 ### Gsettings
 
 gsettings set org.gnome.mutter center-new-windows true
