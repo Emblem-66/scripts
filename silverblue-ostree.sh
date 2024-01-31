@@ -64,7 +64,7 @@ EOF
 
 gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.desktop.wm.preferences action-middle-click-titlebar 'minimize'
-gsettings set org.gnome.shell enabled-extensions "['gsconnect@andyholmes.github.io', 'caffeine@patapon.info']"
+gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info']"
 
 ### Nautilus
 
@@ -109,7 +109,6 @@ flatpak install -y \
 	com.github.cubitect.cubiomes-viewer
 flatpak override --user --env=MANGOHUD_CONFIG=no_display,position=middle-left,font_size=13,full,fps_limit=60
 
-
 ### Game Launchers
 
 apps=(
@@ -135,50 +134,6 @@ git clone https://github.com/tkashkin/Adwaita-for-Steam
 cd Adwaita-for-Steam && ./install.py && cd ~ && rm -r -f Adwaita-for-Steam
 
 ### Flatpak apps install
-
-flatpak_apps=(
-app.drey.EarTag
-app.drey.Warp
-com.bitwarden.desktop
-com.github.geigi.cozy
-com.github.neithern.g4music
-com.github.tchx84.Flatseal
-com.github.unrud.VideoDownloader
-com.mattjakeman.ExtensionManager
-com.neatdecisions.Detwinner
-com.transmissionbt.Transmission
-eu.ithz.umftpd
-fr.handbrake.ghb
-io.github.cboxdoerfer.FSearch
-io.github.celluloid_player.Celluloid
-io.github.dvlv.boxbuddyrs
-io.github.giantpinkrobots.varia
-io.gitlab.adhami3310.Converter
-io.gitlab.theevilskeleton.Upscaler
-io.missioncenter.MissionCenter
-net.mediaarea.MediaInfo
-net.natesales.Aviator
-org.filezillaproject.Filezilla
-org.gnome.Calculator
-org.gnome.Calendar
-org.gnome.Chess
-org.gnome.Evince
-org.gnome.FileRoller
-org.gnome.Loupe
-org.gnome.SimpleScan
-org.gnome.TextEditor
-org.gnome.gThumb
-org.gnome.gitlab.YaLTeR.Identity
-org.gnome.meld
-org.jdownloader.JDownloader
-org.libreoffice.LibreOffice
-org.nickvision.tubeconverter
-org.onlyoffice.desktopeditors
-)
-
-# for app in "${flatpak_apps[@]}"; do
-#    flatpak install -y $app
-# done
 
 echo "base apps"
 flatpak install \
