@@ -1,5 +1,88 @@
 #!/bin/bash
 
+echo "Welcome to the setup script!"
+
+# Prompt user for input
+read -p "Perform task 1? (yes/no): " task1
+read -p "Perform task 1? (yes/no): " task2
+read -p "Perform task 1? (yes/no): " task3
+read -p "Perform task 1? (yes/no): " task4
+read -p "Perform task 1? (yes/no): " task5
+read -p "Perform task 1? (yes/no): " task6
+
+# Perform tasks based on user input
+if [ "$task1" == "yes" ]; then
+    echo "Performing task 1..."
+    # Add commands for task 1
+fi
+
+if [ "$task2" == "yes" ]; then
+    echo "Performing task 2..."
+    # Add commands for task 2
+fi
+
+if [ "$task1" == "yes" ]; then
+    echo "Performing task 1..."
+    # Add commands for task 1
+fi
+
+if [ "$task2" == "yes" ]; then
+    echo "Performing task 2..."
+    # Add commands for task 2
+fi
+
+if [ "$task1" == "yes" ]; then
+    echo "Performing task 1..."
+    # Add commands for task 1
+fi
+
+if [ "$task2" == "yes" ]; then
+    echo "Performing task 2..."
+    # Add commands for task 2
+fi
+
+#--------
+
+echo "Welcome to the setup script!"
+
+# Prompt user for input (accept only "y" or "n")
+read -p "Do you want to perform task 1? (y/n): " task1
+read -p "Do you want to perform task 2? (y/n): " task2
+
+# Convert input to lowercase for case-insensitivity
+task1="${task1,,}"
+task2="${task2,,}"
+
+# Validate input
+if [[ "$task1" != "y" && "$task1" != "n" ]]; then
+    echo "Invalid input for task 1. Please enter 'y' or 'n'."
+    exit 1
+fi
+
+if [[ "$task2" != "y" && "$task2" != "n" ]]; then
+    echo "Invalid input for task 2. Please enter 'y' or 'n'."
+    exit 1
+fi
+
+# Perform tasks based on user input
+if [ "$task1" == "y" ]; then
+    echo "Performing task 1..."
+    # Add commands for task 1
+fi
+
+if [ "$task2" == "y" ]; then
+    echo "Performing task 2..."
+    # Add commands for task 2
+fi
+
+echo "Setup script completed."
+
+#--------
+
+
+### rebase
+gnome-terminal --command "rpm-ostree cancel && rpm-ostree rebase" &
+
 #	rpm-ostree cancel
 #	rpm-ostree rebase ostree-unverified-registry:ghcr.io/emblem-66/fedora-silverblue:latest
 
