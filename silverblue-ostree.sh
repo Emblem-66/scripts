@@ -1,16 +1,7 @@
 #!/bin/bash
 
-#-----------------------------------------------------------------------------------------------#
-#																								#
-#	rpm-ostree cancel																			#
-#	rpm-ostree rebase ostree-unverified-registry:ghcr.io/emblem-66/fedora-silverblue:latest		#
-#																								#
-#-----------------------------------------------------------------------------------------------#
-#																								#
-#					PERSONAL SCRIPT, DON'T USE IT ON YOUR PC UNLESS YOU ARE ME					#
-#								"YOU ARE NOT YOU, YOU ARE ME. NO SHIT"							#
-#																								#
-#-----------------------------------------------------------------------------------------------#
+#	rpm-ostree cancel
+#	rpm-ostree rebase ostree-unverified-registry:ghcr.io/emblem-66/fedora-silverblue:latest
 
 sudo ostree admin pin 0
 
@@ -25,10 +16,10 @@ sudo flatpak remote-modify --enable flathub
 ### Auto mount
 
 mkdir -p ~/HDD1 ~/HDD2 ~/HDD3 ~/SSD1 ~/SSD2
-echo "LABEL=SSD1TB /var/home/pc/SSD1 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
 echo "LABEL=HDD1TB /var/home/pc/HDD1 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
 echo "LABEL=HDD2TB /var/home/pc/HDD2 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
 echo "LABEL=HDD4TB /var/home/pc/HDD3 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
+echo "LABEL=SSD1TB /var/home/pc/SSD1 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
 echo "LABEL=SSD1TB2 /var/home/pc/SSD2 auto nosuid,nodev,nofail,x-gvfs-show 0 0" | sudo tee -a /etc/fstab
 sudo mount -a
 
@@ -62,6 +53,12 @@ EOF
 
 ### .bashrc
 
+cat << EOF > ~/.bashrc
+update() {
+rpm-ostree upgrade; flatpak update -y; flatpak uninstall --unused -y
+}
+EOF
+
 ### scripts
 
 ### Gsettings
@@ -85,6 +82,11 @@ gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'si
 # gsettings set org.gnome.desktop.interface monospace-font-name 'SF Mono 9' # 'Liberation Mono 9'
 # gsettings set org.gnome.desktop.interface document-font-name 'New York 9' # 'System-ui 9'
 # gsettings set org.gnome.desktop.wm.preferences titlebar-font 'SF Pro Display 9' # 'System-ui 9'
+
+gsettings set org.gnome.desktop.interface font-name 'System-ui 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12'
+gsettings set org.gnome.desktop.interface document-font-name 'System-ui 10'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'System-ui 10'
 
 ### Adw-gtk3 theme
 
