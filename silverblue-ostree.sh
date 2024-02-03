@@ -1,47 +1,16 @@
 #!/bin/bash
 
-echo "Welcome to the setup script!"
-
-# Prompt user for input
-read -p "Perform task 1? (yes/no): " task1
-read -p "Perform task 1? (yes/no): " task2
-read -p "Perform task 1? (yes/no): " task3
-read -p "Perform task 1? (yes/no): " task4
-read -p "Perform task 1? (yes/no): " task5
-read -p "Perform task 1? (yes/no): " task6
-
-# Perform tasks based on user input
-if [ "$task1" == "yes" ]; then
+# Function to perform task 1
+perform_task1() {
     echo "Performing task 1..."
     # Add commands for task 1
-fi
+}
 
-if [ "$task2" == "yes" ]; then
+# Function to perform task 2
+perform_task2() {
     echo "Performing task 2..."
     # Add commands for task 2
-fi
-
-if [ "$task1" == "yes" ]; then
-    echo "Performing task 1..."
-    # Add commands for task 1
-fi
-
-if [ "$task2" == "yes" ]; then
-    echo "Performing task 2..."
-    # Add commands for task 2
-fi
-
-if [ "$task1" == "yes" ]; then
-    echo "Performing task 1..."
-    # Add commands for task 1
-fi
-
-if [ "$task2" == "yes" ]; then
-    echo "Performing task 2..."
-    # Add commands for task 2
-fi
-
-#--------
+}
 
 echo "Welcome to the setup script!"
 
@@ -66,13 +35,49 @@ fi
 
 # Perform tasks based on user input
 if [ "$task1" == "y" ]; then
+    perform_task1
+fi
+
+if [ "$task2" == "y" ]; then
+    perform_task2
+fi
+
+echo "Setup script completed."
+
+
+#--------
+
+echo "Welcome to the setup script!"
+
+# Prompt user for input
+read -p "Perform task 1? (yes/no): " task1
+
+# Perform tasks based on user input
+if [ "$task1" == "yes" ]; then
     echo "Performing task 1..."
     # Add commands for task 1
 fi
 
-if [ "$task2" == "y" ]; then
-    echo "Performing task 2..."
-    # Add commands for task 2
+#--------
+
+echo "Welcome to the setup script!"
+
+# Prompt user for input (accept only "y" or "n")
+read -p "Do you want to perform task 1? (y/n): " task1
+
+# Convert input to lowercase for case-insensitivity
+task1="${task1,,}"
+
+# Validate input
+if [[ "$task1" != "y" && "$task1" != "n" ]]; then
+    echo "Invalid input for task 1. Please enter 'y' or 'n'."
+    exit 1
+fi
+
+# Perform tasks based on user input
+if [ "$task1" == "y" ]; then
+    echo "Performing task 1..."
+    # Add commands for task 1
 fi
 
 echo "Setup script completed."
