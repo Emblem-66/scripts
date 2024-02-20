@@ -75,14 +75,6 @@ function gnome_setting() {
 	gsettings set org.gnome.desktop.interface icon-theme 'MoreWaita'
 }
 
-function apple_fonts(){
-	git clone https://github.com/aisgbnok/Apple-Fonts.git ~/.local/share/fonts/Apple-Fonts
-	gsettings set org.gnome.desktop.interface font-name 'SF Pro Display 10'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'SF Mono 12'
-	gsettings set org.gnome.desktop.interface document-font-name 'New York 10'
-	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'SF Pro Display 10'
-}
-
 function install_firefox() {
 	echo "Installing essential packages..."
 	flatpak install -y org.mozilla.firefox
@@ -156,7 +148,6 @@ flatpak_setup
 configure_drives
 bashrc_stuff
 gnome_setting
-apple_fonts
 install_firefox
 gaming_setup
 install_packages
