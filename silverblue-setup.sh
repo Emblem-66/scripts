@@ -157,7 +157,7 @@ flatpak_setup
 configure_drives
 bashrc_stuff
 gnome_setting
-#apple_fonts
+apple_fonts
 install_firefox
 gaming_setup
 install_packages
