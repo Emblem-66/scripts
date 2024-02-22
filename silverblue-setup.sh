@@ -140,7 +140,7 @@ function install_packages() {
 		org.gnome.gitlab.YaLTeR.Identity \
 		org.jdownloader.JDownloader \
 		org.onlyoffice.desktopeditors \
-  org.gnome.gitlab.somas.Apostrophe org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive
+		org.gnome.gitlab.somas.Apostrophe org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive
 }
 
 rebase
