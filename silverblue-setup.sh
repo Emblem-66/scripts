@@ -65,10 +65,6 @@ function gnome_setting() {
 	gsettings set org.gnome.nautilus.preferences default-sort-order 'name'
 	gsettings set org.gnome.nautilus.list-view use-tree-view true
 	gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified']"
-	gsettings set org.gnome.desktop.interface font-name 'System-ui 10' #'SF Pro Display 9'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12' #'SF Mono 9'
-	gsettings set org.gnome.desktop.interface document-font-name 'System-ui 10' #'New York 9'
-	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'System-ui 10' #'SF Pro Display 9'
 	flatpak install -y org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 	git clone https://github.com/somepaulo/MoreWaita.git ~/.local/share/icons/MoreWaita
@@ -154,12 +150,12 @@ function install_packages() {
 		org.gnome.gitlab.somas.Apostrophe org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive
 }
 
-rebase
-flatpak_setup
+#rebase
+#flatpak_setup
 configure_drives
 bashrc_stuff
-gnome_setting
-set_fonts
+#gnome_setting
+#set_fonts
 install_firefox
 gaming_setup
 brew
