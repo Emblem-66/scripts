@@ -43,7 +43,7 @@ function configure_drives() {
 	EOF
 }
 
-function bashrc_stuff(){
+function bashrc_stuff() {
 cat << EOF > ~/.bashrc
 
 # My functions
