@@ -120,6 +120,10 @@ function gaming_setup() {
 	cd Adwaita-for-Steam && ./install.py && cd ~ && rm -r -f Adwaita-for-Steam
 }
 
+function brew() {
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
 function install_packages() {
 	echo "Installing essential packages..."
 	flatpak install -y \
@@ -158,4 +162,5 @@ gnome_setting
 set_fonts
 install_firefox
 gaming_setup
+brew
 install_packages
