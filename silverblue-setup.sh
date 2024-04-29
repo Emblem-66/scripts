@@ -125,18 +125,25 @@ function install_packages() {
 	flatpak install -y \
 		app.drey.Warp \
 		com.bitwarden.desktop \
+		com.discordapp.Discord \
+		com.github.finefindus.eyedropper \
 		com.github.geigi.cozy \
+		com.github.huluti.Curtail \
 		com.github.neithern.g4music \
+		com.github.taiko2k.avvie \
 		com.github.tchx84.Flatseal \
+		com.github.tenderowl.frog \
 		com.mattjakeman.ExtensionManager \
 		com.neatdecisions.Detwinner \
 		com.transmissionbt.Transmission \
-		io.github.alexkdeveloper.calculator \
 		io.github.cboxdoerfer.FSearch \
 		io.github.celluloid_player.Celluloid \
-		io.github.dvlv.boxbuddyrs \
+		io.github.seadve.Kooha \
+		io.github.tfuxu.Halftone \
 		io.gitlab.adhami3310.Converter \
+		io.gitlab.theevilskeleton.Upscaler \
 		net.mediaarea.MediaInfo \
+		org.chromium.Chromium \
 		org.gnome.Calculator \
 		org.gnome.Calendar \
 		org.gnome.Evince \
@@ -145,9 +152,13 @@ function install_packages() {
 		org.gnome.TextEditor \
 		org.gnome.gThumb \
 		org.gnome.gitlab.YaLTeR.Identity \
+		org.gnome.gitlab.somas.Apostrophe org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive \
+		org.gnome.meld \
 		org.jdownloader.JDownloader \
+		org.kde.krita \
+		org.mozilla.firefox \
 		org.onlyoffice.desktopeditors \
-		org.gnome.gitlab.somas.Apostrophe org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive
+		page.codeberg.Imaginer.Imaginer
 }
 
 #rebase
